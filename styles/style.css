@@ -1,0 +1,159 @@
+@import "/styles/normalize.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/*  Color Palette */
+:root {
+  --color-primary: hsl(300, 43%, 22%);
+  --color-accent: hsl(333, 80%, 67%);
+  --color--paragraph: hsl(303, 10%, 53%);
+  --color-reviewer-name: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+/* Typography */
+body {
+  margin: 0 auto;
+  max-width: 1440px;
+  font-size: 1.8rem;
+  font-family: "League Spartan", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 0;
+}
+
+p {
+  color: var(--color--paragraph);
+  font-weight: 500;
+}
+
+/*  block */
+.block {
+  width: 375px;
+  padding: 20px;
+}
+
+/* Description block */
+.description-block {
+  text-align: center;
+}
+
+.description__heading {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 1.5ch;
+}
+
+/* ratings block */
+.rated-block {
+  display: grid;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.rated__section {
+  display: grid;
+  gap: 0.5rem;
+  border-radius: 5px;
+  background-color: var(--color-reviewer-name);
+  padding: 1.5rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* review block */
+.review-block {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.review__card {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 3rem;
+  color: var(--color-reviewer-name);
+  display: grid;
+  gap: 3rem;
+}
+
+.reviewer__profile {
+  display: flex;
+  gap: 2rem;
+  color: var(--color-reviewer-name);
+}
+
+.profile__image {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.verified__profile {
+  color: var(--color-accent);
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .block {
+    width: 450px;
+  }
+
+  .description-block {
+    text-align: left;
+  }
+
+  .rated-block {
+    width: fit-content;
+  }
+
+  .rated__section {
+    width: 450px;
+    display: flex;
+    gap: 2rem;
+    padding-left: 3rem;
+    align-items: center;
+    margin-left: 5rem;
+  }
+
+  .rated__section:first-child {
+    margin-left: 0;
+  }
+
+  .rated__section:last-child {
+    margin-left: 10rem;
+  }
+
+  .review-block {
+    display: flex;
+    gap: 2rem;
+    grid-column: 1/-1;
+    width: 90%;
+  }
+
+  .review__card {
+    margin-top: 2rem;
+    height: min-content;
+  }
+
+  .review__card:first-child {
+    margin-top: 0;
+  }
+
+  .review__card:last-child {
+    margin-top: 4rem;
+  }
+}
